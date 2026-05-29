@@ -39,9 +39,9 @@ powercfg /setactive scheme_current
 
 echo.
 echo IMPORTANTE:
-echo Vai agora abrir definicoes de ecrã para mudares para 60Hz.
+echo Vai agora abrir definicoes de ecrã para mudar para 60Hz.
 
 start ms-settings:display-advanced
 
-echo MODO MEDIO ATIVADO.
+echo MODO MEDIO ATIVO.
 pause

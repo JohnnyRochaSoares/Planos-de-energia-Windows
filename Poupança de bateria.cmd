@@ -13,8 +13,8 @@ echo Ativar MODO ECO + 60Hz...
 powercfg /setactive a1841308-3541-4fab-bc81-f71556f20b4a
 
 :: CPU baixo consumo
-powercfg /setacvalueindex scheme_current sub_processor PROCTHROTTLEMAX 5
-powercfg /setdcvalueindex scheme_current sub_processor PROCTHROTTLEMAX 5
+powercfg /setacvalueindex scheme_current sub_processor PROCTHROTTLEMAX 0
+powercfg /setdcvalueindex scheme_current sub_processor PROCTHROTTLEMAX 0
 
 powercfg /setacvalueindex scheme_current sub_processor PROCTHROTTLEMIN 5
 powercfg /setdcvalueindex scheme_current sub_processor PROCTHROTTLEMIN 5

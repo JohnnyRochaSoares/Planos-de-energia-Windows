@@ -1,4 +1,4 @@
-# **Copyright (c) 2026 João Rocha Soares**
+# **Direitos de Autor (c) 2026 João Rocha Soares**
 
 # 
 
@@ -158,10 +158,10 @@
 
 
 
-* ##### Windows 10/11 (64-bit);
-* ##### Permissões de Administrador;
-* ##### Powershell ou cmd.exe;
-* ##### Eventualmente Git.
+* Windows 10/11 (64-bit);
+* Permissões de Administrador;
+* Powershell ou cmd.exe;
+* Eventualmente Git.
 
 
 

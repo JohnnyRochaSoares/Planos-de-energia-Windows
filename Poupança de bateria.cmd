@@ -7,41 +7,42 @@ if %errorlevel% neq 0 (
     exit
 )
 
-echo Ativar MODO ECO + 60Hz...
+echo A Ativar o Modo Eco...
 
 :: Plano de energia eficiente
 powercfg /setactive a1841308-3541-4fab-bc81-f71556f20b4a
 
-:: CPU baixo consumo
-powercfg /setacvalueindex scheme_current sub_processor PROCTHROTTLEMAX 0
-powercfg /setdcvalueindex scheme_current sub_processor PROCTHROTTLEMAX 0
+:: CPU minimo - zero permite descer ao minimo absoluto quando idle
+powercfg /setacvalueindex scheme_current sub_processor PROCTHROTTLEMIN 0
+powercfg /setdcvalueindex scheme_current sub_processor PROCTHROTTLEMIN 0
 
-powercfg /setacvalueindex scheme_current sub_processor PROCTHROTTLEMIN 5
-powercfg /setdcvalueindex scheme_current sub_processor PROCTHROTTLEMIN 5
+:: CPU maximo
+powercfg /setacvalueindex scheme_current sub_processor PROCTHROTTLEMAX 5
+powercfg /setdcvalueindex scheme_current sub_processor PROCTHROTTLEMAX 5
 
 :: Turbo OFF
 powercfg /setacvalueindex scheme_current sub_processor PERFBOOSTMODE 0
 powercfg /setdcvalueindex scheme_current sub_processor PERFBOOSTMODE 0
 
-:: Suspensão rápida (eco)
-powercfg /change standby-timeout-ac 1
+:: Suspensao rapida
+powercfg /change standby-timeout-ac 5
 powercfg /change standby-timeout-dc 1
 
-:: Ecrã rápido
-powercfg /change monitor-timeout-ac 1
+:: Ecra rapido
+powercfg /change monitor-timeout-ac 3
 powercfg /change monitor-timeout-dc 1
 
-:: Ativar economia de bateria do Windows
+:: Acao em bateria critica
 powercfg /setdcvalueindex scheme_current sub_battery BATACTIONCRIT 1
 
-:: Tentar forçar plano de energia gráfico (eco GPU)
+:: Aplicar alteracoes
 powercfg /setactive scheme_current
 
 echo.
 echo IMPORTANTE:
-echo Vai agora abrir definicoes de ecrã para mudares para 60Hz.
+echo Vai agora abrir definicoes de ecra para mudares para 60Hz.
 
 start ms-settings:display-advanced
 
-echo MODO ECO ATIVADO.
+echo Modo Eco Ativado.
 pause
